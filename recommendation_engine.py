@@ -23,7 +23,7 @@ class RecommendationEngine:
                         api_version="2024-02-15-preview"
                         )
         else:
-            raise Exception("OpenAI not implemented")    
+            raise NotImplementedError("Only Azure OpenAI is supported at this time. Please set USE_AZURE_OPENAI to True in the .env file.")
         
 
     async def get_recommendations(self, keyword_phrase, previous_links_str=None):
